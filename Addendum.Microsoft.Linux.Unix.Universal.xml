@@ -1,0 +1,402 @@
+<ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>Addendum.Microsoft.Linux.Unix.Universal</ID>
+      <Version>10.0.0.3</Version>
+    </Identity>
+    <Name>Addendum UNIX/Linux Universal Operating System</Name>
+    <References>  
+     <Reference Alias="Unix">
+        <ID>Microsoft.Unix.Library</ID>
+        <Version>10.19.1113.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Linux">
+        <ID>Microsoft.Linux.Library</ID>
+        <Version>10.19.1113.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="RedHat">
+        <ID>Microsoft.Linux.RedHat.Library</ID>
+        <Version>10.19.1113.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>	 
+	  <Reference Alias="RHEL6">
+        <ID>Microsoft.Linux.RHEL.6</ID>
+        <Version>10.19.1147.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="RHEL7">
+        <ID>Microsoft.Linux.RHEL.7</ID>
+        <Version>10.19.1147.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="Universal">
+        <ID>Microsoft.Linux.Universal.Library</ID>
+        <Version>10.19.1113.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="Solaris10">
+        <ID>Microsoft.Solaris.10</ID>
+        <Version>10.19.1147.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="Solaris11">
+        <ID>Microsoft.Solaris.11</ID>
+        <Version>10.19.1147.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="SLES12">
+        <ID>Microsoft.Linux.SLES.12</ID>
+        <Version>10.19.1147.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="AIX7">
+        <ID>Microsoft.AIX.7</ID>
+        <Version>10.19.1147.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="SystemHealth">
+        <ID>System.Health.Library</ID>
+        <Version>7.0.8430.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>	  
+    </References>
+  </Manifest>
+  <Monitoring>
+	<Monitors>	  
+	  <UnitMonitor ID="Addendum.Microsoft.Linux.RHEL.6.OperatingSystem.Available.Memory.Percentage.Monitor" Accessibility="Public" Enabled="false" Target="RHEL6!Microsoft.Linux.RHEL.6.OperatingSystem" ParentMonitorID="SystemHealth!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="Unix!Microsoft.Unix.WSMan.Performance.Average.Threshold.MonitorType" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="Addendum.Microsoft.Linux.RHEL.6.OperatingSystem.Memory.Percentage.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Data/Context/Value$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="UnderThreshold" MonitorTypeStateID="UnderThreshold" HealthState="Error" />
+          <OperationalState ID="OverThreshold" MonitorTypeStateID="OverThreshold" HealthState="Success" />
+        </OperationalStates>
+        <Configuration>
+          <TargetSystem>$Target/Host/Property[Type="Unix!Microsoft.Unix.Computer"]/NetworkName$</TargetSystem>
+          <Uri>http://schemas.microsoft.com/wbem/wscim/1/cim-schema/2/SCX_MemoryStatisticalInformation?__cimnamespace=root/scx</Uri>
+          <Filter />
+          <SplitItems>true</SplitItems>
+          <Interval>300</Interval>
+          <ObjectName>Memory</ObjectName>
+          <CounterName>% Available Memory</CounterName>
+          <InstanceName />
+          <Value>$Data/WsManData/*[local-name(.)='SCX_MemoryStatisticalInformation']/*[local-name(.)='PercentAvailableMemory']$</Value>
+          <Threshold>10</Threshold>
+          <NumSamples>3</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+	  <UnitMonitor ID="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.Available.Memory.Percentage.Monitor" Accessibility="Public" Enabled="false" Target="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ParentMonitorID="SystemHealth!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="Unix!Microsoft.Unix.WSMan.Performance.Average.Threshold.MonitorType" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.Memory.Percentage.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Data/Context/Value$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="UnderThreshold" MonitorTypeStateID="UnderThreshold" HealthState="Error" />
+          <OperationalState ID="OverThreshold" MonitorTypeStateID="OverThreshold" HealthState="Success" />
+        </OperationalStates>
+        <Configuration>
+          <TargetSystem>$Target/Host/Property[Type="Unix!Microsoft.Unix.Computer"]/NetworkName$</TargetSystem>
+          <Uri>http://schemas.microsoft.com/wbem/wscim/1/cim-schema/2/SCX_MemoryStatisticalInformation?__cimnamespace=root/scx</Uri>
+          <Filter />
+          <SplitItems>true</SplitItems>
+          <Interval>300</Interval>
+          <ObjectName>Memory</ObjectName>
+          <CounterName>% Available Memory</CounterName>
+          <InstanceName />
+          <Value>$Data/WsManData/*[local-name(.)='SCX_MemoryStatisticalInformation']/*[local-name(.)='PercentAvailableMemory']$</Value>
+          <Threshold>10</Threshold>
+          <NumSamples>3</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+	  <UnitMonitor ID="Addendum.Microsoft.Linux.Universal.OperatingSystem.Available.Memory.Percentage.Monitor" Accessibility="Public" Enabled="false" Target="Universal!Microsoft.Linux.Universal.OperatingSystem" ParentMonitorID="SystemHealth!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="Unix!Microsoft.Unix.WSMan.Performance.Average.Threshold.MonitorType" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="Addendum.Microsoft.Linux.Universal.OperatingSystem.Memory.Percentage.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Data/Context/Value$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="UnderThreshold" MonitorTypeStateID="UnderThreshold" HealthState="Error" />
+          <OperationalState ID="OverThreshold" MonitorTypeStateID="OverThreshold" HealthState="Success" />
+        </OperationalStates>
+        <Configuration>
+          <TargetSystem>$Target/Host/Property[Type="Unix!Microsoft.Unix.Computer"]/NetworkName$</TargetSystem>
+          <Uri>http://schemas.microsoft.com/wbem/wscim/1/cim-schema/2/SCX_MemoryStatisticalInformation?__cimnamespace=root/scx</Uri>
+          <Filter />
+          <SplitItems>true</SplitItems>
+          <Interval>300</Interval>
+          <ObjectName>Memory</ObjectName>
+          <CounterName>% Available Memory</CounterName>
+          <InstanceName />
+          <Value>$Data/WsManData/*[local-name(.)='SCX_MemoryStatisticalInformation']/*[local-name(.)='PercentAvailableMemory']$</Value>
+          <Threshold>10</Threshold>
+          <NumSamples>3</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+	  <UnitMonitor ID="Addendum.Microsoft.Solaris.10.OperatingSystem.Available.Memory.Percentage.Monitor" Accessibility="Public" Enabled="false" Target="Solaris10!Microsoft.Solaris.10.OperatingSystem" ParentMonitorID="SystemHealth!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="Unix!Microsoft.Unix.WSMan.Performance.Average.Threshold.MonitorType" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="Addendum.Microsoft.Solaris.10.OperatingSystem.Memory.Percentage.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Data/Context/Value$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="UnderThreshold" MonitorTypeStateID="UnderThreshold" HealthState="Error" />
+          <OperationalState ID="OverThreshold" MonitorTypeStateID="OverThreshold" HealthState="Success" />
+        </OperationalStates>
+        <Configuration>
+          <TargetSystem>$Target/Host/Property[Type="Unix!Microsoft.Unix.Computer"]/NetworkName$</TargetSystem>
+          <Uri>http://schemas.microsoft.com/wbem/wscim/1/cim-schema/2/SCX_MemoryStatisticalInformation?__cimnamespace=root/scx</Uri>
+          <Filter />
+          <SplitItems>true</SplitItems>
+          <Interval>300</Interval>
+          <ObjectName>Memory</ObjectName>
+          <CounterName>% Available Memory</CounterName>
+          <InstanceName />
+          <Value>$Data/WsManData/*[local-name(.)='SCX_MemoryStatisticalInformation']/*[local-name(.)='PercentAvailableMemory']$</Value>
+          <Threshold>10</Threshold>
+          <NumSamples>3</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+	  <UnitMonitor ID="Addendum.Microsoft.Solaris.11.OperatingSystem.Available.Memory.Percentage.Monitor" Accessibility="Public" Enabled="false" Target="Solaris11!Microsoft.Solaris.11.OperatingSystem" ParentMonitorID="SystemHealth!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="Unix!Microsoft.Unix.WSMan.Performance.Average.Threshold.MonitorType" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="Addendum.Microsoft.Solaris.11.OperatingSystem.Memory.Percentage.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Data/Context/Value$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="UnderThreshold" MonitorTypeStateID="UnderThreshold" HealthState="Error" />
+          <OperationalState ID="OverThreshold" MonitorTypeStateID="OverThreshold" HealthState="Success" />
+        </OperationalStates>
+        <Configuration>
+          <TargetSystem>$Target/Host/Property[Type="Unix!Microsoft.Unix.Computer"]/NetworkName$</TargetSystem>
+          <Uri>http://schemas.microsoft.com/wbem/wscim/1/cim-schema/2/SCX_MemoryStatisticalInformation?__cimnamespace=root/scx</Uri>
+          <Filter />
+          <SplitItems>true</SplitItems>
+          <Interval>300</Interval>
+          <ObjectName>Memory</ObjectName>
+          <CounterName>% Available Memory</CounterName>
+          <InstanceName />
+          <Value>$Data/WsManData/*[local-name(.)='SCX_MemoryStatisticalInformation']/*[local-name(.)='PercentAvailableMemory']$</Value>
+          <Threshold>10</Threshold>
+          <NumSamples>3</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+	  <UnitMonitor ID="Addendum.Microsoft.Linux.SLES.12.OperatingSystem.Available.Memory.Percentage.Monitor" Accessibility="Public" Enabled="false" Target="SLES12!Microsoft.Linux.SLES.12.OperatingSystem" ParentMonitorID="SystemHealth!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="Unix!Microsoft.Unix.WSMan.Performance.Average.Threshold.MonitorType" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="Addendum.Microsoft.Linux.SLES.12.OperatingSystem.Memory.Percentage.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Data/Context/Value$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="UnderThreshold" MonitorTypeStateID="UnderThreshold" HealthState="Error" />
+          <OperationalState ID="OverThreshold" MonitorTypeStateID="OverThreshold" HealthState="Success" />
+        </OperationalStates>
+        <Configuration>
+          <TargetSystem>$Target/Host/Property[Type="Unix!Microsoft.Unix.Computer"]/NetworkName$</TargetSystem>
+          <Uri>http://schemas.microsoft.com/wbem/wscim/1/cim-schema/2/SCX_MemoryStatisticalInformation?__cimnamespace=root/scx</Uri>
+          <Filter />
+          <SplitItems>true</SplitItems>
+          <Interval>300</Interval>
+          <ObjectName>Memory</ObjectName>
+          <CounterName>% Available Memory</CounterName>
+          <InstanceName />
+          <Value>$Data/WsManData/*[local-name(.)='SCX_MemoryStatisticalInformation']/*[local-name(.)='PercentAvailableMemory']$</Value>
+          <Threshold>10</Threshold>
+          <NumSamples>3</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+	  <UnitMonitor ID="Addendum.Microsoft.AIX.7.OperatingSystem.Available.Memory.Percentage.Monitor" Accessibility="Public" Enabled="false" Target="AIX7!Microsoft.AIX.7.OperatingSystem" ParentMonitorID="SystemHealth!System.Health.PerformanceState" Remotable="true" Priority="Normal" TypeID="Unix!Microsoft.Unix.WSMan.Performance.Average.Threshold.MonitorType" ConfirmDelivery="false">
+        <Category>PerformanceHealth</Category>
+        <AlertSettings AlertMessage="Addendum.Microsoft.AIX.7.OperatingSystem.Memory.Percentage.AlertMessage">
+          <AlertOnState>Error</AlertOnState>
+          <AutoResolve>true</AutoResolve>
+          <AlertPriority>Normal</AlertPriority>
+          <AlertSeverity>Error</AlertSeverity>
+          <AlertParameters>
+            <AlertParameter1>$Data/Context/Value$</AlertParameter1>
+          </AlertParameters>
+        </AlertSettings>
+        <OperationalStates>
+          <OperationalState ID="UnderThreshold" MonitorTypeStateID="UnderThreshold" HealthState="Error" />
+          <OperationalState ID="OverThreshold" MonitorTypeStateID="OverThreshold" HealthState="Success" />
+        </OperationalStates>
+        <Configuration>
+          <TargetSystem>$Target/Host/Property[Type="Unix!Microsoft.Unix.Computer"]/NetworkName$</TargetSystem>
+          <Uri>http://schemas.microsoft.com/wbem/wscim/1/cim-schema/2/SCX_MemoryStatisticalInformation?__cimnamespace=root/scx</Uri>
+          <Filter />
+          <SplitItems>true</SplitItems>
+          <Interval>300</Interval>
+          <ObjectName>Memory</ObjectName>
+          <CounterName>% Available Memory</CounterName>
+          <InstanceName />
+          <Value>$Data/WsManData/*[local-name(.)='SCX_MemoryStatisticalInformation']/*[local-name(.)='PercentAvailableMemory']$</Value>
+          <Threshold>10</Threshold>
+          <NumSamples>3</NumSamples>
+        </Configuration>
+      </UnitMonitor>
+	</Monitors>
+  </Monitoring>
+  <Presentation>
+    <StringResources>      
+	  <StringResource ID="Addendum.Microsoft.Linux.RHEL.6.OperatingSystem.Memory.Percentage.AlertMessage" />
+	  <StringResource ID="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.Memory.Percentage.AlertMessage" />
+	  <StringResource ID="Addendum.Microsoft.Linux.Universal.OperatingSystem.Memory.Percentage.AlertMessage" />
+	  <StringResource ID="Addendum.Microsoft.Solaris.10.OperatingSystem.Memory.Percentage.AlertMessage" />
+	  <StringResource ID="Addendum.Microsoft.Solaris.11.OperatingSystem.Memory.Percentage.AlertMessage" />
+	  <StringResource ID="Addendum.Microsoft.Linux.SLES.12.OperatingSystem.Memory.Percentage.AlertMessage" />
+	  <StringResource ID="Addendum.Microsoft.AIX.7.OperatingSystem.Memory.Percentage.AlertMessage" />
+    </StringResources>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>		
+		<DisplayString ElementID="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.Available.Memory.Percentage.Monitor">
+          <Name>Operating System Available Percentage Memory</Name>
+          <Description>Addendum Red Hat Enterprise Linux Server 7 Operating System Available Percentage Memory Monitor</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="UnderThreshold">
+          <Name>Available Percentage Memory Monitor is under Threshold</Name>
+          <Description>Available Percentage Memory Monitor is under Threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="OverThreshold">
+          <Name>Available Percentage Memory Monitor is over Threshold</Name>
+          <Description>Available Percentage Memory Monitor is over Threshold</Description>
+        </DisplayString>
+		 <DisplayString ElementID="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.Memory.Percentage.AlertMessage">
+          <Name>Percentage Memory is too low</Name>
+          <Description>The threshold for the Memory\% Available Memory performance counter has been exceeded. The value that exceeded the threshold is: {0} %.</Description>
+        </DisplayString>
+		<DisplayString ElementID="Addendum.Microsoft.Linux.RHEL.6.OperatingSystem.Available.Memory.Percentage.Monitor">
+          <Name>Operating System Available Percentage Memory</Name>
+          <Description>Addendum Red Hat Enterprise Linux Server 6 Operating System Available Percentage Memory Monitor</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Linux.RHEL.6.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="UnderThreshold">
+          <Name>Available Percentage Memory Monitor is under Threshold</Name>
+          <Description>Available Percentage Memory Monitor is under Threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Linux.RHEL.6.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="OverThreshold">
+          <Name>Available Percentage Memory Monitor is over Threshold</Name>
+          <Description>Available Percentage Memory Monitor is over Threshold</Description>
+        </DisplayString>
+		 <DisplayString ElementID="Addendum.Microsoft.Linux.RHEL.6.OperatingSystem.Memory.Percentage.AlertMessage">
+          <Name>Percentage Memory is too low</Name>
+          <Description>The threshold for the Memory\% Available Memory performance counter has been exceeded. The value that exceeded the threshold is: {0} %.</Description>
+        </DisplayString>
+		<DisplayString ElementID="Addendum.Microsoft.Linux.Universal.OperatingSystem.Available.Memory.Percentage.Monitor">
+          <Name>Operating System Available Percentage Memory</Name>
+          <Description>Addendum Universal Linux Server Operating System Available Percentage Memory Monitor</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Linux.Universal.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="UnderThreshold">
+          <Name>Available Percentage Memory Monitor is under Threshold</Name>
+          <Description>Available Percentage Memory Monitor is under Threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Linux.Universal.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="OverThreshold">
+          <Name>Available Percentage Memory Monitor is over Threshold</Name>
+          <Description>Available Percentage Memory Monitor is over Threshold</Description>
+        </DisplayString>
+		 <DisplayString ElementID="Addendum.Microsoft.Linux.Universal.OperatingSystem.Memory.Percentage.AlertMessage">
+          <Name>Percentage Memory is too low</Name>
+          <Description>The threshold for the Memory\% Available Memory performance counter has been exceeded. The value that exceeded the threshold is: {0} %.</Description>
+        </DisplayString>
+		<DisplayString ElementID="Addendum.Microsoft.Solaris.10.OperatingSystem.Available.Memory.Percentage.Monitor">
+          <Name>Operating System Available Percentage Memory</Name>
+          <Description>Addendum Solaris 10 Server Operating System Available Percentage Memory Monitor</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Solaris.10.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="UnderThreshold">
+          <Name>Available Percentage Memory Monitor is under Threshold</Name>
+          <Description>Available Percentage Memory Monitor is under Threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Solaris.10.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="OverThreshold">
+          <Name>Available Percentage Memory Monitor is over Threshold</Name>
+          <Description>Available Percentage Memory Monitor is over Threshold</Description>
+        </DisplayString>
+		 <DisplayString ElementID="Addendum.Microsoft.Solaris.10.OperatingSystem.Memory.Percentage.AlertMessage">
+          <Name>Percentage Memory is too low</Name>
+          <Description>The threshold for the Memory\% Available Memory performance counter has been exceeded. The value that exceeded the threshold is: {0} %.</Description>
+        </DisplayString>
+		<DisplayString ElementID="Addendum.Microsoft.Solaris.11.OperatingSystem.Available.Memory.Percentage.Monitor">
+          <Name>Operating System Available Percentage Memory</Name>
+          <Description>Addendum Solaris 11 Server Operating System Available Percentage Memory Monitor</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Solaris.11.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="UnderThreshold">
+          <Name>Available Percentage Memory Monitor is under Threshold</Name>
+          <Description>Available Percentage Memory Monitor is under Threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Solaris.11.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="OverThreshold">
+          <Name>Available Percentage Memory Monitor is over Threshold</Name>
+          <Description>Available Percentage Memory Monitor is over Threshold</Description>
+        </DisplayString>
+		 <DisplayString ElementID="Addendum.Microsoft.Solaris.11.OperatingSystem.Memory.Percentage.AlertMessage">
+          <Name>Percentage Memory is too low</Name>
+          <Description>The threshold for the Memory\% Available Memory performance counter has been exceeded. The value that exceeded the threshold is: {0} %.</Description>
+        </DisplayString>
+		<DisplayString ElementID="Addendum.Microsoft.Linux.SLES.12.OperatingSystem.Available.Memory.Percentage.Monitor">
+          <Name>Operating System Available Percentage Memory</Name>
+          <Description>Addendum Linux SLES 12 Server Operating System Available Percentage Memory Monitor</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Linux.SLES.12.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="UnderThreshold">
+          <Name>Available Percentage Memory Monitor is under Threshold</Name>
+          <Description>Available Percentage Memory Monitor is under Threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.Linux.SLES.12.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="OverThreshold">
+          <Name>Available Percentage Memory Monitor is over Threshold</Name>
+          <Description>Available Percentage Memory Monitor is over Threshold</Description>
+        </DisplayString>
+		 <DisplayString ElementID="Addendum.Microsoft.Linux.SLES.12.OperatingSystem.Memory.Percentage.AlertMessage">
+          <Name>Percentage Memory is too low</Name>
+          <Description>The threshold for the Memory\% Available Memory performance counter has been exceeded. The value that exceeded the threshold is: {0} %.</Description>
+        </DisplayString>
+		<DisplayString ElementID="Addendum.Microsoft.AIX.7.OperatingSystem.Available.Memory.Percentage.Monitor">
+          <Name>Operating System Available Percentage Memory</Name>
+          <Description>Addendum AIX 7 Server Operating System Available Percentage Memory Monitor</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.AIX.7.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="UnderThreshold">
+          <Name>Available Percentage Memory Monitor is under Threshold</Name>
+          <Description>Available Percentage Memory Monitor is under Threshold</Description>
+        </DisplayString>
+        <DisplayString ElementID="Addendum.Microsoft.AIX.7.OperatingSystem.Available.Memory.Percentage.Monitor" SubElementID="OverThreshold">
+          <Name>Available Percentage Memory Monitor is over Threshold</Name>
+          <Description>Available Percentage Memory Monitor is over Threshold</Description>
+        </DisplayString>
+		 <DisplayString ElementID="Addendum.Microsoft.AIX.7.OperatingSystem.Memory.Percentage.AlertMessage">
+          <Name>Percentage Memory is too low</Name>
+          <Description>The threshold for the Memory\% Available Memory performance counter has been exceeded. The value that exceeded the threshold is: {0} %.</Description>
+        </DisplayString>
+	  </DisplayStrings>
+	 </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>
