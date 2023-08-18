@@ -2578,50 +2578,6 @@
         </Configuration>
       </UnitMonitor>
     </Monitors>
-    <Overrides>
-      <MonitorPropertyOverride ID="Alias97980508cc9149599ae348ab89d6090cOverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemTotalPercentProcessorTime3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.TotalPercentProcessorTime.ThreeState.Monitor" Property="Enabled">
-        <Value>true</Value>
-      </MonitorPropertyOverride>
-      <MonitorConfigurationOverride ID="Aliasdcebe39fd6ec4ef48d12293a00be2674OverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemTotalPercentProcessorTime3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.TotalPercentProcessorTime.ThreeState.Monitor" Parameter="ErrorThreshold">
-        <Value>0.5</Value>
-      </MonitorConfigurationOverride>
-      <MonitorConfigurationOverride ID="Alias1105fce9ee9a4f63b33c651b22c1e125OverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemTotalPercentProcessorTime3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.TotalPercentProcessorTime.ThreeState.Monitor" Parameter="Interval">
-        <Value>60</Value>
-      </MonitorConfigurationOverride>
-      <MonitorConfigurationOverride ID="Aliasa03eee1c9d2946d4b2030b06772d30f8OverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemTotalPercentProcessorTime3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.TotalPercentProcessorTime.ThreeState.Monitor" Parameter="NumSamples">
-        <Value>1</Value>
-      </MonitorConfigurationOverride>
-      <MonitorConfigurationOverride ID="Alias067dfc5215cb44a496de14312c62e1a0OverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemTotalPercentProcessorTime3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.TotalPercentProcessorTime.ThreeState.Monitor" Parameter="WarningThreshold">
-        <Value>5</Value>
-      </MonitorConfigurationOverride>
-      <MonitorPropertyOverride ID="Aliasafc242cc28f14f7fa74d2df1f3ffb58cOverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemAvailableMBytes3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.AvailableMBytes.ThreeState.Monitor" Property="Enabled">
-        <Value>true</Value>
-      </MonitorPropertyOverride>
-      <MonitorConfigurationOverride ID="Aliasa775b0a78866461bacd22dc9ead5b1d5OverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemAvailableMBytes3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.AvailableMBytes.ThreeState.Monitor" Parameter="ErrorThreshold">
-        <Value>1500</Value>
-      </MonitorConfigurationOverride>
-      <MonitorConfigurationOverride ID="Alias7065019e8fcb44319cfae547997781eaOverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemAvailableMBytes3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.AvailableMBytes.ThreeState.Monitor" Parameter="Interval">
-        <Value>60</Value>
-      </MonitorConfigurationOverride>
-      <MonitorConfigurationOverride ID="Alias7ae581b18b1d4d3491b77bd081d809e6OverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemAvailableMBytes3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.AvailableMBytes.ThreeState.Monitor" Parameter="NumSamples">
-        <Value>1</Value>
-      </MonitorConfigurationOverride>
-      <MonitorConfigurationOverride ID="Alias98c8a419ee59466384800d216513a91fOverrideForMonitorAddendumMicrosoftLinuxRHEL7OperatingSystemAvailableMBytes3StateMonitorForContextMicrosoftLinuxRHEL7OperatingSystem" Context="RHEL7!Microsoft.Linux.RHEL.7.OperatingSystem" ContextInstance="838e2c43-ad1a-6e46-ce31-4dbab393ea80" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.OperatingSystem.AvailableMBytes.ThreeState.Monitor" Parameter="WarningThreshold">
-        <Value>2000</Value>
-      </MonitorConfigurationOverride>
-      <MonitorPropertyOverride ID="Alias19735c6fb7754f788d3ec297fe2069d0OverrideForMonitorAddendumMicrosoftLinuxRHEL7LogicalDiskPercentFreeSpaceMonitor3StateMonitorForContextMicrosoftLinuxRHEL7LogicalDisk" Context="RHEL7!Microsoft.Linux.RHEL.7.LogicalDisk" ContextInstance="8e22a2fe-ef96-bbc6-10bc-99840faeee40" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.LogicalDisk.PercentFreeSpace.Monitor.ThreeState.Monitor" Property="Enabled">
-        <Value>true</Value>
-      </MonitorPropertyOverride>
-      <MonitorConfigurationOverride ID="Alias67485989ba0144f5882a4ebdb8057f74OverrideForMonitorAddendumMicrosoftLinuxRHEL7LogicalDiskPercentFreeSpaceMonitor3StateMonitorForContextMicrosoftLinuxRHEL7LogicalDisk" Context="RHEL7!Microsoft.Linux.RHEL.7.LogicalDisk" ContextInstance="8e22a2fe-ef96-bbc6-10bc-99840faeee40" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.LogicalDisk.PercentFreeSpace.Monitor.ThreeState.Monitor" Parameter="ErrorThreshold">
-        <Value>95</Value>
-      </MonitorConfigurationOverride>
-      <MonitorConfigurationOverride ID="Alias5f7e88ac5b244acab644206f4f463cf1OverrideForMonitorAddendumMicrosoftLinuxRHEL7LogicalDiskPercentFreeSpaceMonitor3StateMonitorForContextMicrosoftLinuxRHEL7LogicalDisk" Context="RHEL7!Microsoft.Linux.RHEL.7.LogicalDisk" ContextInstance="8e22a2fe-ef96-bbc6-10bc-99840faeee40" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.LogicalDisk.PercentFreeSpace.Monitor.ThreeState.Monitor" Parameter="Interval">
-        <Value>60</Value>
-      </MonitorConfigurationOverride>
-      <MonitorConfigurationOverride ID="Alias69cb1fbd43ae49868cf3ff7158f019b9OverrideForMonitorAddendumMicrosoftLinuxRHEL7LogicalDiskPercentFreeSpaceMonitor3StateMonitorForContextMicrosoftLinuxRHEL7LogicalDisk" Context="RHEL7!Microsoft.Linux.RHEL.7.LogicalDisk" ContextInstance="8e22a2fe-ef96-bbc6-10bc-99840faeee40" Enforced="false" Monitor="Addendum.Microsoft.Linux.RHEL.7.LogicalDisk.PercentFreeSpace.Monitor.ThreeState.Monitor" Parameter="WarningThreshold">
-        <Value>99</Value>
-      </MonitorConfigurationOverride>
-    </Overrides>
   </Monitoring>
   <Presentation>
     <StringResources>
