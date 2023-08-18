@@ -2,7 +2,7 @@
   <Manifest>
     <Identity>
       <ID>Addendum.Microsoft.Linux.Unix.Universal</ID>
-      <Version>10.0.0.11</Version>
+      <Version>10.19.0.11</Version>
     </Identity>
     <Name>Addendum UNIX/Linux Universal Operating System</Name>
     <References>
